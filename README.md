@@ -88,7 +88,12 @@ This app has not been verified yet by Google in order to use Google Sign In.
 
     ![Step 12](./assets/step12.jpg)
 
-2. Create secret that contain your CLIENT_ID and CLIENT_SECRET
+2. Enable GitHub Actions in your repository
+    - Click the `Actions` tab and then click `I understand my workflows, go ahead and run them`
+
+    ![Enable](./assets/enable.png)
+
+3. Create secret that contain your CLIENT_ID and CLIENT_SECRET
     - Click `Settings` > `Secrets` > `Add a new secret`
 
     ![Step 13](./assets/step13.jpg)
