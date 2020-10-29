@@ -22,6 +22,12 @@ else
     unset GOARM
 fi
 
+if [ $GOARCH == "mips" ] || [ $GOARCH == "mipsle" ]; then
+    export GOMIPS=softfloat
+else
+    unset GOMIPS
+fi
+
 export GOOS=$GOOS
 export GOARCH=$GOARCH
 
