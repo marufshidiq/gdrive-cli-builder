@@ -30,6 +30,12 @@ jobs:
         mkdir -p $GOBIN
         go get github.com/gdrive-org/gdrive
 
+    - name: Add support for MIPS and MIPSLE
+      run: |
+        cd $HOME/go/src/github.com/prasmussen/gdrive/vendor/github.com/soniakeys/graph
+        sed -i "s/+build 386 arm/+build 386 arm mips mipsle/g" bits32.go
+        sed -i "s/+build \!386,\!arm/+build \!386,\!arm,\!mips,\!mipsle/g" bits64.go
+    
     - name: Change CLIENT ID & SECRET
       env:
         CLIENT_ID: ${{ secrets.CLIENT_ID }}
