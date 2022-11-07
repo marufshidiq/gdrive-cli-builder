@@ -50,6 +50,7 @@ jobs:
         cd $HOME/go/src/github.com/gdrive-org/gdrive/
         sed -i "s/367116221053-7n0vf5akeru7on6o2fjinrecpdoe99eg.apps.googleusercontent.com/$CLIENT_ID/g" handlers_drive.go
         sed -i "s/1qsNodXNaWq1mQuBjUjmvhoO/$CLIENT_SECRET/g" handlers_drive.go
+        sed -i "s/'urn:ietf:wg:oauth:2.0:oob'/$REDIRECT_URL/g" /auth/oauth.go
         
         
 
