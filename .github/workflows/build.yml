@@ -16,6 +16,10 @@ jobs:
       with:
         go-version: 1.19.3
       id: go
+      
+    - name: Set env for Go
+      run: |
+        go env -w GO111MODULE=auto
 
     - name: Check out repository
       uses: actions/checkout@v2
