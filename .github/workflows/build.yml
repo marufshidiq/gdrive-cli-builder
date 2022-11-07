@@ -32,7 +32,7 @@ jobs:
         export PATH=$PATH:$GOBIN
         mkdir -p $GOPATH/pkg
         mkdir -p $GOBIN
-        go get github.com/prasmussen/gdrive
+        go get github.com/gdrive-org/gdrive
 
     - name: Add support for MIPS and MIPSLE
       run: |
