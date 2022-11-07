@@ -24,7 +24,7 @@ jobs:
     - name: Check out repository
       uses: actions/checkout@v2
 
-    - name: Get https://github.com/gdrive-org/gdrive code
+    - name: Get https://github.com/Msameim181/gdrive code
       run: |
         export GOPATH=$HOME/go
         export GOBIN=$(go env GOPATH)/bin
@@ -32,11 +32,11 @@ jobs:
         export PATH=$PATH:$GOBIN
         mkdir -p $GOPATH/pkg
         mkdir -p $GOBIN
-        go get github.com/gdrive-org/gdrive
+        go get github.com/Msameim181/gdrive
 
     - name: Add support for MIPS and MIPSLE
       run: |
-        cd $HOME/go/src/github.com/prasmussen/gdrive/vendor/github.com/soniakeys/graph
+        cd $HOME/go/src/github.com/Msameim181/gdrive/vendor/github.com/soniakeys/graph
         sed -i "s/+build 386 arm/+build 386 arm mips mipsle/g" bits32.go
         sed -i "s/+build \!386,\!arm/+build \!386,\!arm,\!mips,\!mipsle/g" bits64.go
     
@@ -44,20 +44,20 @@ jobs:
       env:
         CLIENT_ID: ${{ secrets.CLIENT_ID }}
         CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
-        REDIRECT_URL: ${{ secrets.REDIRECT_URL }}
+
         
       run: |
-        cd $HOME/go/src/github.com/gdrive-org/gdrive/
+        cd $HOME/go/src/github.com/Msameim181/gdrive/
         sed -i "s/367116221053-7n0vf5akeru7on6o2fjinrecpdoe99eg.apps.googleusercontent.com/$CLIENT_ID/g" handlers_drive.go
         sed -i "s/1qsNodXNaWq1mQuBjUjmvhoO/$CLIENT_SECRET/g" handlers_drive.go
-        sed -i "s|urn:ietf:wg:oauth:2.0:oob|$REDIRECT_URL|g" auth/oauth.go
+
         
         
 
     - name: Build
       run: |
-        cp -r build/* $HOME/go/src/github.com/gdrive-org/gdrive/
-        cd $HOME/go/src/github.com/gdrive-org/gdrive/
+        cp -r build/* $HOME/go/src/github.com/Msameim181/gdrive/
+        cd $HOME/go/src/github.com/Msameim181/gdrive/
         chmod +x build-selected.sh
         chmod +x build.sh
         ./build-selected.sh
@@ -66,7 +66,7 @@ jobs:
     - name: Copy release file
       run: |
         mkdir release
-        cp -r $HOME/go/src/github.com/gdrive-org/gdrive/_release/bin/* release
+        cp -r $HOME/go/src/github.com/Msameim181/gdrive/_release/bin/* release
 
     - name: Save build file to artifact
       uses: actions/upload-artifact@v1
