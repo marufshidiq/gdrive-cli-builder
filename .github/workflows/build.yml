@@ -20,7 +20,7 @@ jobs:
     - name: Check out repository
       uses: actions/checkout@v2
 
-    - name: Get https://github.com/prasmussen/gdrive code
+    - name: Get https://github.com/gdrive-org/gdrive code
       run: |
         export GOPATH=$HOME/go
         export GOBIN=$(go env GOPATH)/bin
