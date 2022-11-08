@@ -1,0 +1,5 @@
+uvicorn
+fastapi
+pathlib
+rich
+urllib
