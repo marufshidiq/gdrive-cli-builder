@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google API Code Extractor</title>
+</head>
+<body>
+    <!-- Print JS scrip output here -->
+    <div id="output">
+        <h1>Google API Code Extractor</h1>
+        <p>The Clean URL: "<span id="clean_url"></span>"</p>
+        <br>
+        <p>The Code: "<span id="code"></span>"</p>
+        <br>
+        <p>The State: "<span id="state"></span>"</p>
+        <br>
+        <p>The Scope: "<span id="scope"></span>"</p>
+    </div>
+
+    
+</body>
+<script>
+    function parseURLParams(url) {
+        var queryStart = url.indexOf("?") + 1,
+            queryEnd   = url.indexOf("#") + 1 || url.length + 1,
+            query = url.slice(queryStart, queryEnd - 1),
+            pairs = query.replace(/\+/g, " ").split("&"),
+            parms = {}, i, n, v, nv;
+    
+        if (query === url || query === "") return;
+    
+        for (i = 0; i < pairs.length; i++) {
+            nv = pairs[i].split("=", 2);
+            n = decodeURIComponent(nv[0]);
+            v = decodeURIComponent(nv[1]);
+    
+            if (!parms.hasOwnProperty(n)) parms[n] = [];
+            parms[n].push(nv.length === 2 ? v : null);
+        }
+        return {'url': decodeURIComponent(window.location.href), 'parms': parms};
+    }
+    var url = parseURLParams(window.location.href);
+    document.getElementById("clean_url").innerHTML = url.url;
+    document.getElementById("code").innerHTML = url.parms.code;
+    document.getElementById("state").innerHTML = url.parms.state;
+    document.getElementById("scope").innerHTML = url.parms.scope;
+
+
+</script>
+</html>
