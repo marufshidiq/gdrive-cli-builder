@@ -48,8 +48,8 @@ jobs:
         
       run: |
         cd $HOME/go/src/github.com/Msameim181/gdrive/
-        sed -i "s/367116221053-7n0vf5akeru7on6o2fjinrecpdoe99eg.apps.googleusercontent.com/$CLIENT_ID/g" handlers_drive.go
-        sed -i "s/1qsNodXNaWq1mQuBjUjmvhoO/$CLIENT_SECRET/g" handlers_drive.go
+        sed -i "s/UseYourClientId/$CLIENT_ID/g" handlers_drive.go
+        sed -i "s/UseYourClientSecret/$CLIENT_SECRET/g" handlers_drive.go
         sed -i "s|http://localhost/|$REDIRECT_URL|g" auth/oauth.go
         
         
