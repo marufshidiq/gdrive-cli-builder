@@ -94,14 +94,14 @@ This app has not been verified yet by Google in order to use Google Sign In.
     ![Setup, Setup 2](./assets/Setup/Setup2_Action.png)
 
 3. Create secret that contain your CLIENT_ID and CLIENT_SECRET
-    - Click `Settings` > `Secrets` > `Add a new secret`
+    - Click `Settings` > `Secrets` > `Actions` > `New repository secret`
 
     ![Setup, Setup 3](./assets/Setup/Setup3_Setting-Secret-Clean.png)
 
     - Open your `client_id.json` file then copy `CLIENT_ID`, `CLIENT_SECRET` and `REDIRECT_URL` to create secrets
 
     -- Set `REDIRECT_URL` like the image below. You can change the `REDIRECT_URL` to your own, but you must change the `REDIRECT_URL` in `Google Credential page` too.
-    
+
     ![Setup, Setup 4](./assets/Setup/Setup4_Google-Client-Secret.png)
     
     - Make sure you have CLIENT_ID, CLIENT_SECRET and REDIRECT_URL secret
