@@ -102,8 +102,8 @@ This app has not been verified yet by Google in order to use Google Sign In.
 
     - Open your `client_id.json` file then copy `CLIENT_ID`, `CLIENT_SECRET` and `REDIRECT_URL` to create secrets
 
-    -- Set `REDIRECT_URL` like the image below. You can change the `REDIRECT_URL` to your own, but you must change the `REDIRECT_URL` in `Google Credential page` too.
-
+        - Set `REDIRECT_URL` like the image below. You can change the `REDIRECT_URL` to your own, but you must change the `REDIRECT_URL` in `Google Credential page` too.
+        - For better result set  `REDIRECT_URL` to "http://localhost:3030" and then for using and getting the Code run  [`localhost_server.py`](./localhost_server.py).
     ![Setup, Setup 4](./assets/Setup/Setup4_Google-Client-Secret.png)
     
     - Make sure you have CLIENT_ID, CLIENT_SECRET and REDIRECT_URL secret
