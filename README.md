@@ -86,27 +86,27 @@ This app has not been verified yet by Google in order to use Google Sign In.
 1. Fork this repository
     - Click the `fork` button
 
-    ![Step 12](./assets/step12.jpg)
+    ![Setup, Setup 1](./assets/Setup/Setup1_Fork.png)
 
 2. Enable GitHub Actions in your repository
     - Click the `Actions` tab and then click `I understand my workflows, go ahead and run them`
 
-    ![Enable](./assets/enable.png)
+    ![Setup, Setup 2](./assets/Setup/Setup2_Action.png)
 
 3. Create secret that contain your CLIENT_ID and CLIENT_SECRET
     - Click `Settings` > `Secrets` > `Add a new secret`
 
-    ![Step 13](./assets/step13.jpg)
+    ![Setup, Setup 3](./assets/Setup/Setup3_Setting-Secret-Clean.png)
 
-    - Open your `client_id.json` file then copy `CLIENT_ID` and `CLIENT_SECRET` to create secrets
+    - Open your `client_id.json` file then copy `CLIENT_ID`, `CLIENT_SECRET` and `REDIRECT_URL` to create secrets
 
-    ![Step 14](./assets/step14.jpg)
-    ![Step 15](./assets/step15.jpg)
-    ![Step 16](./assets/step16.jpg)
+    -- Set `REDIRECT_URL` like the image below. You can change the `REDIRECT_URL` to your own, but you must change the `REDIRECT_URL` in `Google Credential page` too.
+    
+    ![Setup, Setup 4](./assets/Setup/Setup4_Google-Client-Secret.png)
+    
+    - Make sure you have CLIENT_ID, CLIENT_SECRET and REDIRECT_URL secret
 
-    - Make sure you have CLIENT_ID and CLIENT_SECRET secret
-
-    ![Step 17](./assets/step17.jpg)
+    ![Setup, Setup 5](./assets/Setup/Setup5_Setting-Secret-Made.png)
 </details>
 
 <details>
@@ -116,11 +116,12 @@ This app has not been verified yet by Google in order to use Google Sign In.
 
 1. Choose your platform by editing the [`list.txt`](./build/list.txt) file inside build directory
 
-    ![Step 18](./assets/step18.jpg)
+    ![Build, Build 1](./assets/Build/Build1_List.png)
+    <!-- ![Build, Build 5](./assets/Build/Build1_Setting.png) -->
 
     - Edit file by click the pencil icon
 
-    ![Step 19](./assets/step19.jpg)
+    ![Build, Build 2](./assets/Build/Build2_Edit-List.png)
 
     - Write your platform in `list.txt` file. You can write multiple platform (split by line)
 
@@ -159,27 +160,28 @@ This app has not been verified yet by Google in order to use Google Sign In.
         - windows/amd64
         </details>
 
-    ![Step 20](./assets/step20.jpg)
+    ![Build, Build 3](./assets/Build/Build3_Add-Devices.png)
 
     - Save this file by commit the change
 
     >> P.S. Because GitHub Actions didn't have manual trigger to build, so we only can trigger the build process by commit changes and push it to `master` branch
 
-    ![Step 21](./assets/step21.jpg)
+    ![Build, Build 4](./assets/Build/Build4_Save-Changes.png)
 
     - Inspect your build process by click `Actions` > `Build GDrive CLI` workflow > `{Your commit message}` *i.e.* **Update list.txt**
 
-    ![Step 22](./assets/step22.jpg)
+    ![Build, Build 5](./assets/Build/Build5_Go-Action.png)
 
     - Make sure all step is successfully build
 
-    ![Step 23](./assets/step23.jpg)
+    ![Build, Build 6](./assets/Build/Build6_Action-Success.png)
+    ![Build, Build 7](./assets/Build/Build7_Action-Detail.png)
 
     - If the build process has been finished, you can download the file by click `Artifacts` button in top-right section
 
     >> P.S. You can also delete this file by click the trash icon so another user cannot download this file
 
-    ![Step 24](./assets/step24.jpg)
+    ![Build, Build 8](./assets/Build/Build8_Action-Artifacts.png)
 </details>
 
 <details>
